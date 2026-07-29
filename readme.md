@@ -1,0 +1,1 @@
+this is entirely going to consist of things like ejs template engine frmo very basic to advance knowledge along with a appropriate project in general
