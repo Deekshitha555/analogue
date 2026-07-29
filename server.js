@@ -8,43 +8,22 @@ const path = require("path");
 const Student = require("./models/Student");
 
 const app = express();
-
-// ----------------------------
-// VIEW ENGINE
-// ----------------------------
-
+//ejs engine
 app.set("view engine", "ejs");
-
 app.set("views", path.join(__dirname, "views"));
-
-// ----------------------------
-// BUILT-IN MIDDLEWARE
-// ----------------------------
 
 // Reads normal HTML form data
 app.use(express.urlencoded({ extended: true }));
-
 // Reads JSON data
 app.use(express.json());
-
 // Allows ?_method=PATCH and ?_method=DELETE
 app.use(methodOverride("_method"));
-
 // Serves CSS, browser JS, images, etc.
 app.use(express.static(path.join(__dirname, "public")));
-
-// ----------------------------
-// HOME ROUTE
-// ----------------------------
 
 app.get("/", (req, res) => {
     res.redirect("/students");
 });
-
-// ----------------------------
-// READ ALL STUDENTS
-// GET /students
-// ----------------------------
 
 app.get("/students", async (req, res) => {
     try {
@@ -60,19 +39,10 @@ app.get("/students", async (req, res) => {
     }
 });
 
-// ----------------------------
-// SHOW CREATE FORM
-// GET /students/new
-// ----------------------------
-
 app.get("/students/new", (req, res) => {
     res.render("students/new");
 });
 
-// ----------------------------
-// CREATE STUDENT
-// POST /students
-// ----------------------------
 
 app.post("/students", async (req, res) => {
     try {
@@ -93,10 +63,6 @@ app.post("/students", async (req, res) => {
     }
 });
 
-// ----------------------------
-// READ ONE STUDENT
-// GET /students/:id
-// ----------------------------
 
 app.get("/students/:id", async (req, res) => {
     try {
@@ -116,10 +82,6 @@ app.get("/students/:id", async (req, res) => {
     }
 });
 
-// ----------------------------
-// SHOW EDIT FORM
-// GET /students/:id/edit
-// ----------------------------
 
 app.get("/students/:id/edit", async (req, res) => {
     try {
@@ -138,11 +100,6 @@ app.get("/students/:id/edit", async (req, res) => {
         res.status(400).send("Invalid student ID");
     }
 });
-
-// ----------------------------
-// UPDATE STUDENT
-// PATCH /students/:id
-// ----------------------------
 
 app.patch("/students/:id", async (req, res) => {
     try {
@@ -174,10 +131,6 @@ app.patch("/students/:id", async (req, res) => {
     }
 });
 
-// ----------------------------
-// DELETE STUDENT
-// DELETE /students/:id
-// ----------------------------
 
 app.delete("/students/:id", async (req, res) => {
     try {
@@ -195,17 +148,11 @@ app.delete("/students/:id", async (req, res) => {
     }
 });
 
-// ----------------------------
-// 404 HANDLER
-// ----------------------------
 
 app.use((req, res) => {
     res.status(404).send("Route not found");
 });
 
-// ----------------------------
-// DATABASE AND SERVER
-// ----------------------------
 
 const startServer = async () => {
     try {
