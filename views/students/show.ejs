@@ -1,0 +1,22 @@
+<%- include("../partials/header") %>
+
+<h1><%= student.name %></h1>
+
+<p>Email: <%= student.email %></p>
+<p>Age: <%= student.age %></p>
+<p>Course: <%= student.course %></p>
+
+<a href="/students/<%= student._id %>/edit">
+    Edit Student
+</a>
+
+<form
+    action="/students/<%= student._id %>?_method=DELETE"
+    method="POST"
+>
+    <button type="submit">
+        Delete Student
+    </button>
+</form>
+
+<%- include("../partials/footer") %>

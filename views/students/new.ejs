@@ -1,0 +1,49 @@
+<%- include("../partials/header") %>
+
+<h1>Add Student</h1>
+
+<form action="/students" method="POST">
+
+    <label for="name">Name</label>
+
+    <input
+        id="name"
+        type="text"
+        name="name"
+        required
+    >
+
+    <label for="email">Email</label>
+
+    <input
+        id="email"
+        type="email"
+        name="email"
+        required
+    >
+
+    <label for="age">Age</label>
+
+    <input
+        id="age"
+        type="number"
+        name="age"
+        required
+    >
+
+    <label for="course">Course</label>
+
+    <input
+        id="course"
+        type="text"
+        name="course"
+        required
+    >
+
+    <button type="submit">
+        Create Student
+    </button>
+
+</form>
+
+<%- include("../partials/footer") %>

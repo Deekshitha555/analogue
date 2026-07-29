@@ -1,0 +1,58 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+}
+
+nav {
+    padding: 16px;
+    background: #222;
+}
+
+nav a {
+    margin-right: 16px;
+    color: white;
+    text-decoration: none;
+}
+
+.container {
+    width: min(900px, 92%);
+    margin: 30px auto;
+}
+
+.student-list {
+    display: grid;
+    gap: 16px;
+    margin-top: 24px;
+}
+
+.student-card {
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+}
+
+form {
+    display: grid;
+    gap: 10px;
+    max-width: 500px;
+}
+
+.inline-form {
+    display: inline;
+}
+
+input {
+    padding: 10px;
+}
+
+button,
+.button {
+    width: fit-content;
+    padding: 10px 16px;
+    cursor: pointer;
+}

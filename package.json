@@ -1,0 +1,33 @@
+{
+  "name": "analogue",
+  "version": "1.0.0",
+  "description": "this is entirely going to consist of things like ejs template engine frmo very basic to advance knowledge along with a appropriate project in general",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon server.js",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Deekshitha555/analogue.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Deekshitha555/analogue/issues"
+  },
+  "homepage": "https://github.com/Deekshitha555/analogue#readme",
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "ejs": "^6.0.1",
+    "express": "^5.2.1",
+    "method-override": "^3.0.0",
+    "mongoose": "^9.8.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}
